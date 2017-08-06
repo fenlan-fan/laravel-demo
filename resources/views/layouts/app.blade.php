@@ -12,12 +12,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
+    <link href="//cdn.shopify.com/s/files/1/0880/2454/t/2/assets/timber.scss.css?10061947258110571957" rel="stylesheet" type="text/css" media="all" />
+    <link href="//cdn.shopify.com/s/files/1/0880/2454/t/2/assets/theme.scss.css?10061947258110571957" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
         body {
             font-family: 'Lato';
+            font-size: large;
         }
 
         .fa-btn {
@@ -72,7 +75,31 @@
         </div>
     </nav>
 
-    @yield('content')
+    <div>
+        @yield('content')
+    </div>
+
+    <!-- 尾部 -->
+    <nav class="navbar navbar-default navbar-static-top">
+        @section('footer')
+            <div class="jumbotron" style="margin:0;">
+                <div class="container">
+                    <span>  @2017 fenlan-fan  </span>
+                    <span> <a href="https://github.com/fenlan-fan">Github</a> </span>
+                </div>
+
+                <div class="container">
+                    <span> Project Developer </span>
+                    <span> <a href="https://github.com/fenlan">fenlan</a> </span>
+                    <span> <a href="https://github.com/fanzhonghao">fanzhonghao</a> </span>
+                </div>
+                <div class="container">
+                    <span> Reference </span>
+                    <span> <a href="https://www.shopbookshop.com/collections/books"> bookshop </a> </span>
+                </div>
+            </div>
+        @show
+    </nav>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
