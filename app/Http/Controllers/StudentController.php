@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
@@ -157,6 +158,5 @@ class StudentController extends Controller
             return redirect('student/index')->with('error', '删除失败-' . $id);
         }
     }
-
 
 }

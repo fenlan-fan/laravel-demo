@@ -4,13 +4,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            {{--<div class="panel panel-default">--}}
-                {{--<div class="panel-heading">Welcome</div>--}}
+            {{-- <div class="panel panel-default">
+                <div class="panel-heading">Welcome</div>
 
-                {{--<div class="panel-body">--}}
-                    {{--Your Application's Landing Page.--}}
-                {{--</div>--}}
-            {{--</div>--}}
+                <div class="panel-body">
+                    Your Application's Landing Page.
+                </div>
+            </div> --}}
 
             <!-- book -->
             <header class="section-header text-center">
@@ -28,474 +28,47 @@
             </header>
 
                 <!-- book list -->
-                <div class="grid-uniform">
+                @foreach($books as $book)
+                    <div class="grid-uniform">
+                        <div class="grid__item grid-product medium--one-half large--one-third is-sold-out">
+                            <div class="grid-product__wrapper">
+                                <div class="grid-product__image-wrapper">
+                                    <a class="grid-product__image-link" href="{{ url('book/detail', ['id' => $book->id]) }}">
+                                        <img src="{{ url('/images/' . $book->image) }}" alt="{{ $book->name }} by {{ $book->author }}" class="grid-product__image">
+                                    </a>
 
+                                    @if ($book->amount == 0)
+                                        <div class="grid-product__sold-out">
+                                            <p>Sold<br /> Out</p>
+                                        </div>
+                                    @endif
 
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third is-sold-out">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/all-this-everyday-by-joanne-kyger">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/Kryger-10_-_1_grande.jpg?v=1496961939" alt="ALL THIS EVERYDAY by Joanne Kyger" class="grid-product__image">
-                                </a>
-
-                                <div class="grid-product__sold-out">
-                                    <p>Sold<br /> Out</p>
                                 </div>
 
-                            </div>
-
-                            <a href="/collections/books/products/all-this-everyday-by-joanne-kyger" class="grid-product__meta">
-                                <span class="grid-product__title">ALL THIS EVERYDAY by Joanne Kyger</span>
-                                <span class="grid-product__price-wrap">
+                                <a href="{{ url('book/detail', ['id' => $book->id]) }}" class="grid-product__meta">
+                                    <span class="grid-product__title">{{ $book->name }} by {{ $book->author }}</span>
+                                    <span class="grid-product__price-wrap">
                                     <span class="long-dash">—</span>
                                     <span class="grid-product__price">
 
-                                        $ 25
+                                        $ {{ $book->price }}
 
                                     </span>
                                 </span>
 
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third is-sold-out">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/baby-breakdown-by-anne-waldman">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/baby-1_-_1_grande.jpg?v=1493423404" alt="BABY BREAKDOWN by Anne Waldman" class="grid-product__image">
                                 </a>
-
-                                <div class="grid-product__sold-out">
-                                    <p>Sold<br /> Out</p>
-                                </div>
-
                             </div>
-
-                            <a href="/collections/books/products/baby-breakdown-by-anne-waldman" class="grid-product__meta">
-                                <span class="grid-product__title">BABY BREAKDOWN by Anne Waldman</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 35
-
-                                    </span>
-                                </span>
-
-                            </a>
                         </div>
+
+                    </div>
+                @endforeach
+
+            <!-- 分页  -->
+                <div>
+                    <div class="pull-right">
+                        {{ $books->render() }}
                     </div>
 
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third is-sold-out">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/calamity-janes-letters-to-her-daughter-by-jane-cannary-hickok">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/JANE-1_grande.jpg?v=1460749532" alt="CALAMITY JANE&#39;S LETTERS TO HER DAUGHTER by Jane Cannary Hickok" class="grid-product__image">
-                                </a>
-
-                                <div class="grid-product__sold-out">
-                                    <p>Sold<br /> Out</p>
-                                </div>
-
-                            </div>
-
-                            <a href="/collections/books/products/calamity-janes-letters-to-her-daughter-by-jane-cannary-hickok" class="grid-product__meta">
-                                <span class="grid-product__title">CALAMITY JANE'S LETTERS TO HER DAUGHTER by Jane Cannary Hickok</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 8.95
-
-                                    </span>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third is-sold-out">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/clay-usa-by-barbara-fendrick-et-al">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/clay-1_-_1_grande.jpg?v=1493425880" alt="CLAY USA by Barbara Fendrick, et al" class="grid-product__image">
-                                </a>
-
-                                <div class="grid-product__sold-out">
-                                    <p>Sold<br /> Out</p>
-                                </div>
-
-                            </div>
-
-                            <a href="/collections/books/products/clay-usa-by-barbara-fendrick-et-al" class="grid-product__meta">
-                                <span class="grid-product__title">CLAY USA by Barbara Fendrick, et al</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 15
-
-                                    </span>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/la-tourette-the-le-corbusier-monestary-by-anton-henze-paul-rand-signed-bookplate">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/TOURETTE-1_-_1_grande.jpg?v=1496967295" alt="LA TOURETTE: THE LE CORBUSIER MONESTARY by Anton Henze [PAUL RAND signed bookplate]" class="grid-product__image">
-                                </a>
-
-                            </div>
-
-                            <a href="/collections/books/products/la-tourette-the-le-corbusier-monestary-by-anton-henze-paul-rand-signed-bookplate" class="grid-product__meta">
-                                <span class="grid-product__title">LA TOURETTE: THE LE CORBUSIER MONESTARY by Anton Henze [PAUL RAND signed bookplate]</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 150
-
-                                    </span>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third is-sold-out">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/le-livre-de-brigitte-bardot-by-nina-companeez">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/bardot-1_-_1_grande.jpg?v=1493424628" alt="LE LIVRE DE BRIGITTE BARDOT by Nina Companeez" class="grid-product__image">
-                                </a>
-
-                                <div class="grid-product__sold-out">
-                                    <p>Sold<br /> Out</p>
-                                </div>
-
-                            </div>
-
-                            <a href="/collections/books/products/le-livre-de-brigitte-bardot-by-nina-companeez" class="grid-product__meta">
-                                <span class="grid-product__title">LE LIVRE DE BRIGITTE BARDOT by Nina Companeez</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 55
-
-                                    </span>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/max-bill-by-max-bense">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/maxbill1_grande.jpg?v=1481752470" alt="MAX BILL by Max Bense" class="grid-product__image">
-                                </a>
-
-                            </div>
-
-                            <a href="/collections/books/products/max-bill-by-max-bense" class="grid-product__meta">
-                                <span class="grid-product__title">MAX BILL by Max Bense</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 149
-
-                                    </span>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/my-camera-on-point-lobos-by-edward-weston">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/EW-1_grande.jpg?v=1488610625" alt="MY CAMERA ON POINT LOBOS by Edward Weston" class="grid-product__image">
-                                </a>
-
-                            </div>
-
-                            <a href="/collections/books/products/my-camera-on-point-lobos-by-edward-weston" class="grid-product__meta">
-                                <span class="grid-product__title">MY CAMERA ON POINT LOBOS by Edward Weston</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 400
-
-                                    </span>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third is-sold-out">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/my-friends-when-young-by-brigit-patmore">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/Patmore-1_-_1_1_grande.jpg?v=1493427163" alt="MY FRIENDS WHEN YOUNG by Brigit Patmore" class="grid-product__image">
-                                </a>
-
-                                <div class="grid-product__sold-out">
-                                    <p>Sold<br /> Out</p>
-                                </div>
-
-                            </div>
-
-                            <a href="/collections/books/products/my-friends-when-young-by-brigit-patmore" class="grid-product__meta">
-                                <span class="grid-product__title">MY FRIENDS WHEN YOUNG by Brigit Patmore</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 35
-
-                                    </span>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third is-sold-out">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/nijhonih-by-virginia-copeland">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/Copeland1_grande.jpg?v=1491674085" alt="NIJHONIH by Virginia Copeland" class="grid-product__image">
-                                </a>
-
-                                <div class="grid-product__sold-out">
-                                    <p>Sold<br /> Out</p>
-                                </div>
-
-                            </div>
-
-                            <a href="/collections/books/products/nijhonih-by-virginia-copeland" class="grid-product__meta">
-                                <span class="grid-product__title">NIJHONIH by Virginia Copeland</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 20
-
-                                    </span>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/out-of-the-whirlwind-three-decades-of-arts-commentary-by-dore-ashton">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/Dore_-_1_grande.jpg?v=1489796144" alt="OUT OF THE WHIRLWIND: THREE DECADES OF ARTS COMMENTARY by Dore Ashton" class="grid-product__image">
-                                </a>
-
-                            </div>
-
-                            <a href="/collections/books/products/out-of-the-whirlwind-three-decades-of-arts-commentary-by-dore-ashton" class="grid-product__meta">
-                                <span class="grid-product__title">OUT OF THE WHIRLWIND: THREE DECADES OF ARTS COMMENTARY by Dore Ashton</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 60
-
-                                    </span>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- /snippets/product-grid-item.liquid -->
-
-
-
-
-
-
-
-
-
-
-                    <div class="grid__item grid-product medium--one-half large--one-third">
-                        <div class="grid-product__wrapper">
-                            <div class="grid-product__image-wrapper">
-                                <a class="grid-product__image-link" href="/collections/books/products/rag-theater-by-nacio-jan-brown">
-                                    <img src="//cdn.shopify.com/s/files/1/0880/2454/products/RAG-1_-_1_grande.jpg?v=1496963131" alt="RAG THEATER by Nacio Jan Brown" class="grid-product__image">
-                                </a>
-
-                            </div>
-
-                            <a href="/collections/books/products/rag-theater-by-nacio-jan-brown" class="grid-product__meta">
-                                <span class="grid-product__title">RAG THEATER by Nacio Jan Brown</span>
-                                <span class="grid-product__price-wrap">
-                                    <span class="long-dash">—</span>
-                                    <span class="grid-product__price">
-
-                                        $ 75
-
-                                    </span>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <!-- page -->
-                <div class="pagination center-block">
-                    <span class="page current">1</span> <span class="page"><a href="/collections/books?page=2" title="">2</a></span> <span class="next"><a href="/collections/books?page=2" title="">&rarr;</a></span>
                 </div>
     </div>
 </div>
