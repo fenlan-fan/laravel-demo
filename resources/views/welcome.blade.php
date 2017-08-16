@@ -28,8 +28,9 @@
             </header>
 
                 <!-- book list -->
-                @foreach($books as $book)
-                    <div class="grid-uniform">
+
+                <div class="grid-uniform">
+                    @foreach($books as $book)
                         <div class="grid__item grid-product medium--one-half large--one-third is-sold-out">
                             <div class="grid-product__wrapper">
                                 <div class="grid-product__image-wrapper">
@@ -59,9 +60,9 @@
                                 </a>
                             </div>
                         </div>
+                    @endforeach
+                </div>
 
-                    </div>
-                @endforeach
 
             <!-- 分页  -->
                 <div>
