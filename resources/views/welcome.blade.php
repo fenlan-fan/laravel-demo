@@ -64,7 +64,7 @@
                 </div>
 
 
-            <!-- 分页  -->
+            <!-- page  -->
                 <div>
                     <div class="pull-right">
                         {{ $books->render() }}
