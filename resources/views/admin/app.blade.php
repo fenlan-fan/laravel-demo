@@ -67,7 +67,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/home') }}"><i class="fa fa-btn fa-home"></i>Home</a></li>
+                                <li><a href="{{ url('/Admin/home') }}"><i class="fa fa-btn fa-home"></i>Home</a></li>
                                 <li><a href="{{ url('/Admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
