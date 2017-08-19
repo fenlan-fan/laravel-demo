@@ -43,3 +43,19 @@ Route::group(['middleware' => ['web']], function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/Admin/home', 'AdminHomeController@index');
+Route::group(['prefix' => 'Admin', 'namespace' => 'Admin'], function () {
+    // Authentication Routes...
+    Route::get('login', 'AdminController@showLoginForm');
+    Route::post('login', 'AdminController@login');
+    Route::get('logout', 'AdminController@logout');
+
+    // Registration Routes...
+    Route::get('register', 'AdminController@showRegistrationForm');
+    Route::post('register', 'AdminController@register');
+
+    // Password Reset Routes...
+    Route::get('password/reset/{token?}', 'AdminController@showResetForm');
+    Route::post('password/email', 'AdminController@sendResetLinkEmail');
+    Route::post('password/reset', 'AdminController@reset');
+});
