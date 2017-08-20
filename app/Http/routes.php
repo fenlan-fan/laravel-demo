@@ -44,6 +44,10 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/Admin/home', 'AdminHomeController@index');
+Route::any('/Admin/book/detail/{id}', 'AdminHomeController@detail');
+Route::any('/Admin/book/create', 'AdminHomeController@create');
+Route::any('/Admin/book/update/{id}', 'AdminHomeController@update');
+Route::any('/Admin/book/delete/{id}', 'AdminHomeController@delete');
 Route::group(['prefix' => 'Admin', 'namespace' => 'Admin'], function () {
     // Authentication Routes...
     Route::get('login', 'AdminController@showLoginForm');

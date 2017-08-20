@@ -35,7 +35,7 @@
                             <div class="grid-product__wrapper">
                                 <div class="grid-product__image-wrapper">
                                     <a class="grid-product__image-link" href="{{ url('book/detail', ['id' => $book->id]) }}">
-                                        <img src="{{ url('/images/' . $book->image) }}" alt="{{ $book->name }} by {{ $book->author }}" class="grid-product__image">
+                                        <img height="212" width="173" src="{{ url('/images/' . $book->image) }}" alt="{{ $book->name }} by {{ $book->author }}" class="grid-product__image">
                                     </a>
 
                                     @if ($book->amount == 0)

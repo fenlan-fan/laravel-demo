@@ -15,4 +15,14 @@ class Book extends Model
 
     public $timestamps = true;
 
+    protected function getDateFormat()
+    {
+        return time();
+    }
+
+    protected function asDateTime($val)
+    {
+        return $val;
+    }
+
 }
