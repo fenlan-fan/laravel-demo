@@ -58,7 +58,7 @@
                    value="{{ old('image') ?  old('image') : $book->image }}"
                    class="form-control" id="image" placeholder="请选择图书封面">
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-5" id="UPtip">
             <p class="form-control-static text-danger">{{ $errors->first('image') }}</p>
         </div>
     </div>
