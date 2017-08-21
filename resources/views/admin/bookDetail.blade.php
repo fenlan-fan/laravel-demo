@@ -17,7 +17,7 @@
                     <div class="grid__item large--seven-twelfths medium--seven-twelfths text-center">
                         <div class="product-single__photos">
                             <div class="product-single__photo-wrapper">
-                                <img class="product-single__photo" id="ProductPhotoImg" src="{{ url('/images/' . $book->image) }}" alt="{{ $book->name }} by {{ $book->author }}">
+                                <img height="400" width="300" class="product-single__photo" id="ProductPhotoImg" src="{{ url('/images/' . $book->image) }}" alt="{{ $book->name }} by {{ $book->author }}">
                             </div>
                         </div>
                     </div>
