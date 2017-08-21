@@ -75,6 +75,7 @@ class AdminHomeController extends Controller
                 'amount' => 'required|integer',
                 'price' => 'required|integer',
                 'brief' => 'required|max:255',
+                'keywords' => 'required|max:40',
             ], [
                 'required' => ':attribute 为必填项',
                 'min' => ':attribute 字数太短',
@@ -86,6 +87,7 @@ class AdminHomeController extends Controller
                 'aomunt' => '数量',
                 'price' => '价格',
                 'brief' => '简介',
+                'keywords' => '关键词'
             ]);
 
             if ($validator->fails()) {
@@ -97,6 +99,7 @@ class AdminHomeController extends Controller
             $book->amount = $request->amount;
             $book->brief = $request->brief;
             $book->price = $request->price;
+            $book->keywords = $request->keywords;
             $img = time() . '.' . $request->image->getClientOriginalExtension();
             $path = $request->image->move(public_path('images'),$img);
             $book->image = $img;
@@ -125,6 +128,7 @@ class AdminHomeController extends Controller
                 'amount' => 'required|integer',
                 'price' => 'required|integer',
                 'brief' => 'required|max:255',
+                'keywords' => 'required|max:40',
             ], [
                 'required' => ':attribute 为必填项',
                 'min' => ':attribute 字数太短',
@@ -136,6 +140,7 @@ class AdminHomeController extends Controller
                 'aomunt' => '数量',
                 'price' => '价格',
                 'brief' => '简介',
+                'keywords' => '关键词'
             ]);
 
             if ($validator->fails()) {
@@ -148,6 +153,7 @@ class AdminHomeController extends Controller
             $book->amount = $request->amount;
             $book->brief = $request->brief;
             $book->price = $request->price;
+            $book->keywords = $request->keywords;
             Storage::delete($book->image);
             $img = time() . '.' . $request->image->getClientOriginalExtension();
             $path = $request->image->move(public_path('images'),$img);

@@ -51,6 +51,18 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="keywords" class="col-sm-2 control-label">关键词</label>
+
+        <div class="col-sm-5">
+            <input type="text" name="keywords"
+                   value="{{ old('keywords') ?  old('keywords') : $book->keywords }}"
+                   class="form-control" id="keywords" placeholder="请输入图书关键词(不多于3个)">
+        </div>
+        <div class="col-sm-5">
+            <p class="form-control-static text-danger">{{ $errors->first('keywords') }}</p>
+        </div>
+    </div>
+    <div class="form-group">
         <label for="image" class="col-sm-2 control-label">封面</label>
 
         <div class="col-sm-5">

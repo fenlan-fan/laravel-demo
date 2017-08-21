@@ -25,7 +25,8 @@
                     <td>{{ $book->name }}</td>
                     <td>{{ $book->author }}</td>
                     <td>{{ $book->amount }}</td>
-                    <td>{{ date('Y-m-d', $book->created_at) }}</td>
+                    {{--<td>{{ date('Y-m-d', $book->created_at) }}</td>--}}
+                    <td>{{ $book->created_at->format('Y-m-d') }}</td>
                     <td>
                         <a href="{{ url('Admin/book/detail', ['id' => $book->id]) }}">详情</a>
                         <a href="{{ url('Admin/book/update', ['id' => $book->id]) }}">修改</a>
