@@ -68,7 +68,7 @@
         <div class="col-sm-5">
             <input type="file" name="image" required="required"
                    value="{{ old('image') ?  old('image') : $book->image }}"
-                   class="form-control" id="image" placeholder="请选择图书封面">
+                   class="form-control" id="image" placeholder="请选择图书封面(小于50k)">
         </div>
         <div class="col-sm-5" id="UPtip">
             <p class="form-control-static text-danger">{{ $errors->first('image') }}</p>

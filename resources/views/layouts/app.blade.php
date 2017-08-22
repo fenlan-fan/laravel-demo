@@ -99,20 +99,20 @@
     <nav class="navbar navbar-default navbar-static-top">
         @section('footer')
             <div class="jumbotron" style="margin:0;">
-                <div class="container">
-                    <span>  @2017 fenlan-fan  </span>
-                    <span> <a href="https://github.com/fenlan-fan">Github</a> </span>
-                </div>
-
-                <div class="container">
-                    <span> Project Developer </span>
-                    <span> <a href="https://github.com/fenlan">fenlan</a> </span>
-                    <span> <a href="https://github.com/fanzhonghao">fanzhonghao</a> </span>
-                </div>
-                <div class="container">
-                    <span> Reference </span>
-                    <span> <a href="https://www.shopbookshop.com/collections/books"> bookshop </a> </span>
-                </div>
+                <blockquote class="blockquote">
+                    <p class="mb-0">
+                        <span>  @2017 fenlan-fan  </span>
+                        <span> <a href="https://github.com/fenlan-fan">Github</a></span>
+                    </p>
+                    <footer class="blockquote-footer">
+                        <span> Project Developer </span>
+                        <span> <a href="https://github.com/fenlan">fenlan</a> </span>
+                        <span> <a href="https://github.com/fanzhonghao">fanzhonghao</a> </span>
+                        <cite title="Source Title"><span> Reference </span>
+                            <span> <a href="https://www.shopbookshop.com/collections/books"> bookshop </a> </span>
+                        </cite>
+                    </footer>
+                </blockquote>
             </div>
         @show
     </nav>

@@ -17,6 +17,7 @@
 
 Route::any('/', 'BookController@welcome');
 Route::any('book/detail/{id}', 'BookController@detail');
+Route::get('book/search', 'BookController@search');
 
 
 /*
