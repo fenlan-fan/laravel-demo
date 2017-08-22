@@ -27,6 +27,20 @@
         .fa-btn {
             margin-right: 6px;
         }
+
+        .searchform {
+            width: 50%;
+            margin: auto;
+            margin-top: 4%;
+            text-align: center;
+        }
+
+        .search-query {
+            width: 70%;
+            margin: auto;
+            border-color: #c0c0c0;
+            background: #ffffff;
+        }
     </style>
 </head>
 <body id="app-layout">

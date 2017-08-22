@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <form class="searchform">
+        <input type="text" class="input-medium search-query" placeholder="Search Books...">
+        <button type="submit" class="btn btn-default">Search</button>
+    </form>
     <div class="collection-hero">
         <div class="collection-hero__image is-init" style="background-image: url(&quot;//cdn.shopify.com/s/files/1/0880/2454/collections/Brooke_1024x1024.jpg?v=1434648703&quot;); transform: translate3d(0px, 155.333px, 0px);"></div>
     </div>
