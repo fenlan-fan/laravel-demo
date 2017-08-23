@@ -11,7 +11,7 @@ class BookController extends Controller
 {
     public function welcome () {
 
-        $books = Book::orderBy('updated_at')->paginate(12);
+        $books = Book::orderBy('updated_at', 'desc')->paginate(12);
 
         return view('welcome', [
             'books' => $books,

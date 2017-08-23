@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7591fe6-1ec0-4ba5-886e-b15e518a3ea9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/searchForm.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/book/searchForm.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/1503333289.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminHomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminHomeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/book/searchNoFound.blade.php" afterPath="$PROJECT_DIR$/resources/views/book/searchNoFound.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/book/searchResults.blade.php" afterPath="$PROJECT_DIR$/resources/views/book/searchResults.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
     </list>
     <ignored path="laravel-demo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,14 +32,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BookController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+            <state relative-caret-position="234">
+              <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
-                <marker date="1503505176543" expanded="true" signature="676:717" ph="SELECT * FRO... books" />
+                <marker date="1503507702148" expanded="true" signature="684:725" ph="SELECT * FRO... books" />
               </folding>
             </state>
           </provider>
@@ -75,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="486">
@@ -153,8 +143,8 @@
         <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/searchForm.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminHomeController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BookController.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BookController.php" />
       </list>
     </option>
   </component>
@@ -173,7 +163,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="24" />
     <option name="width" value="1598" />
     <option name="height" value="870" />
@@ -363,15 +353,15 @@
       <workItem from="1503390100323" duration="2396000" />
       <workItem from="1503392975551" duration="944000" />
       <workItem from="1503400401257" duration="14556000" />
-      <workItem from="1503490118371" duration="11986000" />
+      <workItem from="1503490118371" duration="12331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134535000" />
+    <option name="totallyTimeSpent" value="134880000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1602" height="912" extended-state="7" />
+    <frame x="0" y="24" width="1602" height="912" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -745,17 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-            <marker date="1503505176543" expanded="true" signature="676:717" ph="SELECT * FRO... books" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -769,6 +748,17 @@
         <state relative-caret-position="486">
           <caret line="27" column="272" lean-forward="false" selection-start-line="27" selection-start-column="272" selection-end-line="27" selection-end-column="272" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+            <marker date="1503507702148" expanded="true" signature="684:725" ph="SELECT * FRO... books" />
+          </folding>
         </state>
       </provider>
     </entry>
