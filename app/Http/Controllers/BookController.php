@@ -32,8 +32,9 @@ class BookController extends Controller
         $keyword = $request->keyword;
         $keyword = '%' . $keyword . '%';
 
-        $books = DB::select('SELECT * FROM books WHERE keywords LIKE ?', [$keyword]);
-        if ($books) {
+        // $books = DB::select('SELECT * FROM books WHERE keywords LIKE ?', [$keyword]);
+        $books = Book::where('keywords', 'LIKE', $keyword)->paginate(12);
+        if ($books->total()) {
 
             return view('book.searchResults', [
                 'books' => $books,
