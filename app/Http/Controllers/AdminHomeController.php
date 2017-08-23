@@ -25,8 +25,21 @@ class AdminHomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->isMethod('GET')) {
+
+            $keyword = $request->keyword;
+            $keyword = '%' . $keyword . '%';
+            $books = Book::where('name', 'LIKE', $keyword)->orderBy('updated_at', 'desc')->paginate(5);
+
+            return view('admin.home', [
+                'auth' => 'admin',
+                'books' => $books,
+            ]);
+
+        }
+
         $books = Book::paginate(5);
         return view('admin.home', [
             'auth' => 'admin',

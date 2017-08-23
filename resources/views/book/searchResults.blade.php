@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <form class="searchform" method="get" action="{{ url('book/search') }}">
-        <input name="keyword" type="text" class="input-medium search-query" required="required" placeholder="Search Books...">
-        <button type="submit" class="btn btn-default">Search</button>
-    </form>
+
+    @include('book.searchForm')
+
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -48,7 +47,7 @@
                 <!-- page  -->
                 <div>
                     <div class="pull-right">
-                        {{--{{ $books->render() }}--}}
+                        {{ $books->render() }}
                     </div>
 
                 </div>

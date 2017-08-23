@@ -11,7 +11,7 @@ class BookController extends Controller
 {
     public function welcome () {
 
-        $books = Book::paginate(12);
+        $books = Book::orderBy('updated_at')->paginate(12);
 
         return view('welcome', [
             'books' => $books,
@@ -33,7 +33,7 @@ class BookController extends Controller
         $keyword = '%' . $keyword . '%';
 
         // $books = DB::select('SELECT * FROM books WHERE keywords LIKE ?', [$keyword]);
-        $books = Book::where('keywords', 'LIKE', $keyword)->paginate(12);
+        $books = Book::where('keywords', 'LIKE', $keyword)->orderBy('updated_at', 'desc')->paginate(12);
         if ($books->total()) {
 
             return view('book.searchResults', [

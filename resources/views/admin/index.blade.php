@@ -1,6 +1,11 @@
 @extends('admin.app')
 
 @section('content')
+
+    @if(Request::getPathInfo() == '/Admin/home')
+        @include('admin.searchForm')
+    @endif
+
     <!-- 中间内容区局 -->
     <div class="container">
         <div class="row">
