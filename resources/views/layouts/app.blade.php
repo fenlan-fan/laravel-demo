@@ -85,6 +85,7 @@
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart"></i></a></li>
                     @endif
                 </ul>
             </div>
@@ -98,7 +99,7 @@
     <!-- 尾部 -->
     <nav class="navbar navbar-default navbar-static-top">
         @section('footer')
-            <div class="jumbotron" style="margin:0;">
+            <div class="jumbotron" style="margin:0;" align="center">
                 <blockquote class="blockquote">
                     <p class="mb-0">
                         <span>  @2017 fenlan-fan  </span>
