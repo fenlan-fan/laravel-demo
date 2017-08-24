@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Cart;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
@@ -18,9 +20,42 @@ class BookController extends Controller
         ]);
     }
 
-    public function detail($id) {
+    public function detail(Request $request, $id) {
 
         $book = Book::find($id);
+
+        if ($request->isMethod('POST')) {
+
+            $findID = DB::select('SELECT id FROM carts WHERE userID = ? AND bookID = ?', [Auth::user()->id, $id]);
+            if ($findID) {
+                $cart = Cart::find($findID[0]->id);
+                $cart->amount = $cart->amount + 1;
+
+                if ($cart->save()) {
+
+                    return redirect('book/detail/' . $id)->with('success', '图书已放入购物车');
+                } else {
+
+                    return redirect('book/detail/' . $id)->with('error', '添加失败');
+                }
+
+            }
+            else {
+
+                $cart = new Cart();
+                $cart->userID = Auth::user()->id;
+                $cart->bookID = $id;
+                $cart->amount = 1;
+
+                if ($cart->save()) {
+
+                    return redirect('book/detail/' . $id)->with('success', '图书已放入购物车');
+                } else {
+
+                    return redirect('book/detail/' . $id)->with('error', '添加失败');
+                }
+            }
+        }
 
         return view('book.detail', [
             'book' => $book,

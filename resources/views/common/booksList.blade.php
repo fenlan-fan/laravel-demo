@@ -19,6 +19,18 @@
                 <hr class="hr--small">
                 <meta itemprop="priceCurrency" content="USD">
                 <link itemprop="availability" href="http://schema.org/OutOfStock">
+                @if(Auth::check())
+                <form action="" method="post" enctype="multipart/form-data" class="product-single__form">
+
+                    {{ csrf_field() }}
+
+                    <div class="product-single__add-to-cart">
+                        <button type="submit" name="add" id="AddToCart" class="btn">
+                            <span id="AddToCartText">Add to Cart</span>
+                        </button>
+                    </div>
+                </form>
+                @endif
             </div>
 
             <div class="product-single__description rte" itemprop="description">

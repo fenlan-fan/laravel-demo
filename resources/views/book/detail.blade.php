@@ -8,6 +8,7 @@
                 <meta itemprop="url" content="https://www.shopbookshop.com/products/all-this-everyday-by-joanne-kyger">
                 <meta itemprop="image" content="//cdn.shopify.com/s/files/1/0880/2454/products/Kryger-10_-_1_grande.jpg?v=1496961939">
 
+                @include('common.message')
                 @include('common.booksList')
 
                 <hr class="hr--clear">

@@ -47,6 +47,14 @@
         #cart {
             margin-bottom: 10%;
         }
+
+        hr {
+            border-top: solid #1c1d1d;
+        }
+
+        #AddToCart {
+            border-radius: 0px;
+        }
     </style>
 </head>
 <body id="app-layout">

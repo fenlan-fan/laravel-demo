@@ -45,6 +45,10 @@
             margin: auto;
             background: #ffffff;
         }
+
+        hr {
+            border-top: solid #1c1d1d;
+        }
     </style>
 </head>
 <body id="app-layout">
