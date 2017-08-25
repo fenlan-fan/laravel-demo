@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <hr />
-        <table id="cart">
+        <table id="cart" class="table-striped">
             <thead>
             <tr>
                 <th style="width:50%">Product</th>
