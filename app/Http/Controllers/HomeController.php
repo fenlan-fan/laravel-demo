@@ -31,8 +31,14 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function cart()
+    public function cart(Request $request)
     {
+        if ($request->isMethod('POST')) {
+
+            $cart = Cart::find($request->cartID);
+            $cart->amount = $request->amount;
+            $cart->save();
+        }
         $total = 0;
         $carts = DB::select('SELECT * FROM carts WHERE userID = ?', [Auth::user()->id]);
 
@@ -40,5 +46,18 @@ class HomeController extends Controller
             'carts' => $carts,
             'total' => $total,
         ]);
+    }
+
+    public function delete($id)
+    {
+        $cart = Cart::find($id);
+
+        if ($cart->delete()) {
+
+            return redirect('/cart');
+        } else {
+
+            return '删除失败';
+        }
     }
 }

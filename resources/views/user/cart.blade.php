@@ -22,19 +22,27 @@
                         <div class="col-sm-2 hidden-xs"><img src="{{ url('/images/' . $book->image) }}" alt="..." class="img-responsive"/></div>
                         <div class="col-sm-10">
                             <h4 class="nomargin">{{ $book->name }}</h4>
-                            {{--<p>{{ $book->brief }}</p>--}}
+                            <p>{{ $book->author }}</p>
                         </div>
                     </div>
                 </td>
                 <td data-th="Price">{{ $book->price }}</td>
+                <form method="post" action="" enctype="multipart/form-data">
+
+                    {{ csrf_field() }}
+
                 <td data-th="Quantity">
-                    <input type="number" class="form-control text-center" value="{{ $cart->amount }}">
+                    <input name="amount" type="number" class="form-control text-center" value="{{ $cart->amount }}">
+                    <input name="cartID" type="hidden" class="form-control text-center" value="{{ $cart->id }}">
                 </td>
                 <td data-th="Subtotal" class="text-center">{{ $book->price * $cart->amount }}</td>
                 <td class="actions" data-th="">
-                    <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                    <button type="submit" class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                    <a href="{{ url('/cart/delete', ['id' => $cart->id]) }}"
+                            onclick="if (confirm('确定要删除吗？') == false) return false;"
+                            class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
                 </td>
+                </form>
             </tr>
                 <?php $total = $total + $book->price * $cart->amount; ?>
             @endforeach
