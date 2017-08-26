@@ -55,6 +55,10 @@
         #AddToCart {
             border-radius: 0px;
         }
+        #refresh {
+            width: 10%;
+            margin-left: 90%;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -133,7 +137,18 @@
     </nav>
 
     <!-- JavaScripts -->
+    <script type="text/javascript">
+        function amountChange(cartID) {
 
+            var amount = document.getElementById('amount' + cartID);
+            var price = document.getElementById('price' + cartID);
+            var Subtotal = document.getElementById('Subtotal' + cartID);
+            var total = document.getElementById('total');
+            total.innerText = parseInt(total.innerText) - parseInt(Subtotal.innerText);
+            Subtotal.innerText = parseInt(amount.value) * parseInt(price.innerText);
+            total.innerText = parseInt(total.innerText) + parseInt(Subtotal.innerText);
+        }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}

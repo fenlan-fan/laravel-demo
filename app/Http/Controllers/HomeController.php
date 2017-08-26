@@ -35,9 +35,14 @@ class HomeController extends Controller
     {
         if ($request->isMethod('POST')) {
 
-            $cart = Cart::find($request->cartID);
-            $cart->amount = $request->amount;
-            $cart->save();
+            $amounts = $request->input('amount');
+            $keys = array_keys($request->input('amount'));
+            foreach ($keys as $key) {
+
+                $cart = Cart::find($key);
+                $cart->amount = $amounts[$key];
+                $cart->save();
+            }
         }
         $total = 0;
         $carts = DB::select('SELECT * FROM carts WHERE userID = ?', [Auth::user()->id]);

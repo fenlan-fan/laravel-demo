@@ -14,6 +14,8 @@
             </tr>
             </thead>
             <tbody>
+            <form method="post" action="" enctype="multipart/form-data">
+                {{ csrf_field() }}
             @foreach($carts as $cart)
                 <?php $book = \App\Book::find($cart->bookID); ?>
             <tr>
@@ -26,34 +28,37 @@
                         </div>
                     </div>
                 </td>
-                <td data-th="Price">{{ $book->price }}</td>
-                <form method="post" action="" enctype="multipart/form-data">
+                <td data-th="Price" id="{{ 'price' . $cart->id }}">{{ $book->price }}</td>
+                {{--<form method="post" action="" enctype="multipart/form-data">--}}
 
-                    {{ csrf_field() }}
+                    {{--{{ csrf_field() }}--}}
 
-                <td data-th="Quantity">
-                    <input name="amount" type="number" class="form-control text-center" value="{{ $cart->amount }}">
-                    <input name="cartID" type="hidden" class="form-control text-center" value="{{ $cart->id }}">
+                <td data-th="Quantity" onchange="amountChange({{ $cart->id }})">
+                    <input name="amount[{{ $cart->id }}]" type="number" id="{{ 'amount' . $cart->id }}"
+                           class="form-control text-center" value="{{ $cart->amount }}">
+                    <input name="cartID[{{ $cart->id }}]" type="hidden" class="form-control text-center" value="{{ $cart->id }}">
                 </td>
-                <td data-th="Subtotal" class="text-center">{{ $book->price * $cart->amount }}</td>
+                <td data-th="Subtotal" id="{{ 'Subtotal' . $cart->id }}" class="text-center">{{ $book->price * $cart->amount }}</td>
                 <td class="actions" data-th="">
-                    <button type="submit" class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                    {{--<button type="submit" class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>--}}
                     <a href="{{ url('/cart/delete', ['id' => $cart->id]) }}"
                             onclick="if (confirm('确定要删除吗？') == false) return false;"
                             class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
                 </td>
-                </form>
+                {{--</form>--}}
             </tr>
                 <?php $total = $total + $book->price * $cart->amount; ?>
             @endforeach
+                <button id="refresh" type="submit" class="btn btn-info btn-block">Refresh</button>
+            </form>
             <tfoot>
-                <tr class="visible-xs">
-                    <td class="text-center"><strong>{{ $total }}</strong></td>
-                </tr>
+                {{--<tr class="visible-xs">--}}
+                    {{--<td class="text-center"><strong>{{ $total }}</strong></td>--}}
+                {{--</tr>--}}
                 <tr>
                     <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                     <td colspan="2" class="hidden-xs"></td>
-                    <td class="hidden-xs text-center"><strong>Total {{ $total }}</strong></td>
+                    <td class="hidden-xs text-center"><strong>Total</strong> <strong id="total">{{ $total }}</strong></td>
                     <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
                 </tr>
             </tfoot>
