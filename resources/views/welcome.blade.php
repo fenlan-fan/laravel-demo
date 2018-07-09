@@ -25,7 +25,8 @@
                     <div class="grid">
                         <div class="grid__item">
                             <div class="rte">
-                                <p>We feature new rare-book arrivals from our Oakland shop on this page every few weeks (and in our brick and mortar store we offer 80-100 new rarities every two weeks!). Want updates when we post new books online? Sign up for our <a href="">mailing list</a>. Want a peek at new books in the shop? Follow us on <a href="https://www.instagram.com/bookshopoakland/">Instagram</a>. Questions? Contact us at info@shopbookshop.com. Happy reading!</p>
+                                <p>We make this website for studying something new. For easy, and being limited to our skill and experience that it may have some
+                                thing immature. If you find somewhere which is inapporpeiate, please contact us at 1475307818@qq.com. Happy reading!</p>
                                 <h5></h5>
                             </div>
                         </div>
