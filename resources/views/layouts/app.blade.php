@@ -120,13 +120,19 @@
             <div class="jumbotron" style="margin:0;" align="center">
                 <blockquote class="blockquote">
                     <p class="mb-0">
-                        <span>  @2017 fenlan-fan  </span>
-                        <span> <a href="https://github.com/fenlan-fan">Github</a></span>
+                        <span>  @2018 github.com/webengineeringwork  </span>
+                        <span> <a href="https://github.com/webengineeringwork">Github</a></span>
                     </p>
                     <footer class="blockquote-footer">
                         <span> Project Developer </span>
                         <span> <a href="https://github.com/fenlan">fenlan</a> </span>
                         <span> <a href="https://github.com/fanzhonghao">fanzhonghao</a> </span>
+			 <span> <a href="https://github.com/Bosssheep">Bosssheep</a> </span>
+			<span> <a href="https://github.com/FollowPledge">FollowPledge</a> </span>
+			<span> <a href="https://github.com/LazuriteMoon">LazuriteMoon</a> </span>
+			<span> <a href="https://github.com/ShaneHolmes">ShaneHolmes</a> </span>
+			<span> <a href="https://github.com/wumingGH">wumingGH</a> </span>
+			<span> <a href="https://github.com/YOYO0126">YOYO0126</a> </span>
                         <cite title="Source Title"><span> Reference </span>
                             <span> <a href="https://www.shopbookshop.com/collections/books"> bookshop </a> </span>
                         </cite>
